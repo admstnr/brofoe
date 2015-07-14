@@ -25,6 +25,12 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+  #JSON output feeds
+  get 'data/users' => 'users#feed' #, constraints: {subdomain: 'api'}
+  get 'data/users/:id' => 'users#user_feed' #, constraints: {subdomain: 'api'}
+
+  get 'greatestgood' => 'welcome#greatestgood'
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -35,6 +41,8 @@ Rails.application.routes.draw do
   resources :topics
   resources :profiles
   resources :followers
+
+
 
   # Example resource route with options:
   #   resources :products do
