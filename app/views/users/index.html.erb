@@ -1,0 +1,7 @@
+<h1>Welcome to Users!</h1>
+
+<ul>
+<% @users.each do |user| %>
+	<li><%= link_to( user.handle, user_path(user) ) << " (" << user.first_name << " " << user.last_name << ")" %></li>
+<% end %>
+</ul>

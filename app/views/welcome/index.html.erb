@@ -1,0 +1,44 @@
+<h1>Bro/Foe</h1>
+<p>The 3-character nanoblogging service.</p>
+
+<%= login_form %>
+
+Users that signed up in past week:
+<ul>
+<% User.new_users.each do |user| %>
+	<li><%= user.handle %></li>
+<% end %>
+</ul>
+
+Popular posts:
+<ul>
+<% Post.is_popular.each do |post| %>
+	<li><%= post.body %></li>
+<% end %>
+</ul>
+
+
+<%= select_date(Time.now) %>
+<br />
+<% def flush_post( post, indent=0 ) %>
+	<span class="indents"><% for i in 0...indent  %><span class="indent"></span><% end %><!--
+	--></span><span class="author">@<%= link_to post.author.handle, user_path(post.author) %></span>:
+	<span class="quote"><%= post.body %></span>
+	<% post.topics.each do | topic | %>
+		<span class="topic">#<%= link_to topic.name, topic_path(topic) %></span> 
+	<% end %>
+	<% if post.favorites.length > 0 %><i class="fa fa-heart"></i><% end %>
+	<% post.favorites.last(3).each_with_index do | favorite, i | %>
+		<span class="favorite"><%= link_to favorite.user.handle, user_path(favorite.user) %></span><%= ", " if i < post.favorites.last(3).length-1 %>
+	<% end %>
+	<br />
+	<% post.sub_posts.each {|sub_post| flush_post(sub_post, indent+1) } %>
+<% end %>
+
+<% Post.where(parent: nil).last(4).each do |post| %>
+	<% flush_post( post ) %>
+	<hr />
+<% end %>
+
+	<% post_printer %>
+	<hr />

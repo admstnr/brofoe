@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bro/Foe</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style>
+  .indents > .indent {
+  	width:10px;
+  	height:1px;
+  	background-color:blue;
+  	margin-bottom:5px;
+  	display:inline-block;
+  }
+  .indents {
+  	border-left: 1px blue;
+  }
+  </style>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
