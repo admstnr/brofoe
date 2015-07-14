@@ -1,23 +1,6 @@
 <h1>Bro/Foe</h1>
 <p>The 3-character nanoblogging service.</p>
 
-<%= login_form %>
-
-Users that signed up in past week:
-<ul>
-<% User.new_users.each do |user| %>
-	<li><%= user.handle %></li>
-<% end %>
-</ul>
-
-Popular posts:
-<ul>
-<% Post.is_popular.each do |post| %>
-	<li><%= post.body %></li>
-<% end %>
-</ul>
-
-
 <%= select_date(Time.now) %>
 <br />
 <% def flush_post( post, indent=0 ) %>
