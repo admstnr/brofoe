@@ -43,17 +43,17 @@
 # belongs_to :user
 
 
-User.create( id: 1, first_name: "Cam", last_name: "Crews", handle: "Camerican", email: "cam@nycda.com", password: "sample")
-User.create( id: 2, first_name: "Constance", last_name: "Ip", handle: "IpsoFacto", email: "constance@nycda.com", password: "candice")
-User.create( id: 3, first_name: "Mike", last_name: "Harvey", handle: "Mike", email: "michaelharvey17@gmail.com", password: "sample")
-User.create( id: 4, first_name: "Berlin", last_name: "Patience", handle: "Berlin", email: "starsberlin@gmail.com", password: "sample")
-User.create( id: 5, first_name: "Jeff", last_name: "Bowne", handle: "Jeff", email: "jeffbowne@hotmail.com", password: "sample")
-User.create( id: 6, first_name: "Jake", last_name: "Smergel", handle: "Jake", email: "jacob.smergel@gmail.com", password: "sample")
-User.create( id: 7, first_name: "Chris", last_name: "Duane", handle: "DuanesWorld", email: "cduane21@gmail.com", password: "sample")
-User.create( id: 8, first_name: "Will", last_name: "Bolton", handle: "Will", email: "william.ellet@gmail.com", password: "sample")
-User.create( id: 9, first_name: "Patrick", last_name: "Keenan", handle: "Patrick", email: "pgk4526@gmail.com", password: "sample")
-User.create( id: 10, first_name: "David", last_name: "Toomey", handle: "David", email: "d.toomey@temple.edu", password: "sample")
-User.create( id: 11, first_name: "Azeez", last_name: "Azeez", handle: "Elder", email: "elderazeez20@gmail.com", password: "sample")
+User.create( id: 1, first_name: "Cam", last_name: "Crews", handle: "Camerican", email: "cam@nycda.com", password_digest: "sample")
+User.create( id: 2, first_name: "Constance", last_name: "Ip", handle: "IpsoFacto", email: "constance@nycda.com", password_digest: "candice")
+User.create( id: 3, first_name: "Mike", last_name: "Harvey", handle: "Mike", email: "michaelharvey17@gmail.com", password_digest: "sample")
+User.create( id: 4, first_name: "Berlin", last_name: "Patience", handle: "Berlin", email: "starsberlin@gmail.com", password_digest: "sample")
+User.create( id: 5, first_name: "Jeff", last_name: "Bowne", handle: "Jeff", email: "jeffbowne@hotmail.com", password_digest: "sample")
+User.create( id: 6, first_name: "Jake", last_name: "Smergel", handle: "Jake", email: "jacob.smergel@gmail.com", password_digest: "sample")
+User.create( id: 7, first_name: "Chris", last_name: "Duane", handle: "DuanesWorld", email: "cduane21@gmail.com", password_digest: "sample")
+User.create( id: 8, first_name: "Will", last_name: "Bolton", handle: "Will", email: "william.ellet@gmail.com", password_digest: "sample")
+User.create( id: 9, first_name: "Patrick", last_name: "Keenan", handle: "Patrick", email: "pgk4526@gmail.com", password_digest: "sample")
+User.create( id: 10, first_name: "David", last_name: "Toomey", handle: "David", email: "d.toomey@temple.edu", password_digest: "sample")
+User.create( id: 11, first_name: "Azeez", last_name: "Azeez", handle: "Elder", email: "elderazeez20@gmail.com", password_digest: "sample")
 
 Post.create( id: 1, author_id: 1, body: "bro" )
 Post.create( id: 2, author_id: 2, body: "hey" )
