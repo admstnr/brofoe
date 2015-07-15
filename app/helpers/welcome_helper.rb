@@ -1,16 +1,4 @@
-module WelcomeHelper
-
-  def login_form
-    form_for :user, url: '/login' do |f|
-      concat f.label :username
-      concat f.text_field :username
-      concat tag :br
-      concat f.label :password
-      concat f.password_field :password
-      concat tag :br
-      concat f.submit
-    end
-  end
+module WelcomeHelper 
 
   def post_printer
     Post.where(parent: nil).last(4).each do |post|

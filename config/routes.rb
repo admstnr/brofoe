@@ -29,8 +29,14 @@ Rails.application.routes.draw do
   get 'data/users' => 'users#feed' #, constraints: {subdomain: 'api'}
   get 'data/users/:id' => 'users#user_feed' #, constraints: {subdomain: 'api'}
 
-  get 'greatestgood' => 'welcome#greatestgood'
+  #login handler
+  get 'login' => 'users#login_form'
+  post 'login' => 'users#login'
 
+  get 'profile' => 'users#profile'
+
+  get 'greatestgood' => 'welcome#greatestgood'
+  get 'template' => 'welcome#template'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
