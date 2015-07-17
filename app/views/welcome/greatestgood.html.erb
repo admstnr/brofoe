@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="//greatestgood.org/css/new.css">
+<h1>Greatest Good Feed</h1>
+<hr />
+<% @data.each do |index, advisor| %>
+<%= @html = <<-HTMLOUT
+	<div class="advisorBox">
+			<div class="profile">
+				<a href="#{@root_url}#{advisor['alias']}">
+					<div class="photo">
+						<div class="overlay"></div>
+						<img src="#{@root_url}/img/advisor/#{advisor['alias']}.jpg" onerror="this.onerror=null;this.src='//greatestgood.org/img/advisor/placeholder.jpg';">
+					</div>
+					<div class="details">
+						<div class="name">#{advisor['firstName']} #{advisor['lastName']}</div>
+					</div>
+				</a>
+			</div>
+		</div>
+HTMLOUT
+@html.html_safe
+%>
+<% end %>

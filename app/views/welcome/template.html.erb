@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BroFoe Template</title>
+<style>
+body { margin:0; font-size: 16px; font-family:"Kreon";}
+header { text-align:left; width:100%; position:fixed; top:0; height: 2.5em; background-color:rgba(200,50,160,.95); padding:1em 2em; }
+h1,h2,h3,h4,h5,h6 { font-family: "Raleway";}
+header > * { display:inline-block; margin:0;}
+header:after{ height: .2em; background-color:rgba(180,30,130,.8); bottom:0;left:0;right:0;position:absolute;content:"";}
+header nav { position: absolute; width:auto; right:3em; top:.25em; font-size:1.2em;}
+header nav ul { list-style: none; position:relative; right: 1em; }
+header nav ul li { display: inline-block; margin: 0 1em; }
+main { margin-top: 5.5em; margin-right:2em; margin-left:2em;}
+</style>
+</head>
+<body>
+<header>
+<h1>BroFoe&nbsp;</h1>
+<p>The 3-character nanoblog</p>
+<nav>
+	<ul>
+		<li>Trending</li> | 
+		<li>About</li> | <% 
+		if !session[:user_id].nil?  %>
+				<li><%= current_user.username %>
+	<%	else %>
+				<a href="/login"><li>Login</li></a>
+	<%	end %>
+
+	</ul>
+</nav>
+</header>
+<main>
+<h2>Welcome to the future</h2>
+<p>Standard blogging has been around for nearly two decades while microblogging has been around since 2006.  Now in 2015, BroFoe is proud to present the evolution of Nanoblogging.</p>
+<p>Twitter reduced character counts from indeterminate to 255.  BroFoe revolutionizes communication by cutting the noise down to a mere 3-characters per post.  You can tell people whether they're your <strong>bro</strong> or your <strong>foe</strong> with unprecedented simplicity.  Tell friends they're your <strong>sis</strong> or send them a <strong>dis</strong> with the flick of a few keystrokes.</p>
+<p>By limiting posts to three characters, we have unlocked new levels of efficiency in communication. Best of all, because nasty four-letter words are not allowed, interacting on BroFoe comes with a family-friendly sense of security.  We are elevating the civility of discourse within social media one bro at a time.</p>
+
+</main>
+</body>
+</html>

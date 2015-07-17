@@ -1,0 +1,18 @@
+<header>
+<h1><a href="/">BroFoe</a>&nbsp;</h1>
+<p>The 3-character nanoblog</p>
+<nav>
+	<ul>
+		<li><%= whatever %></li>
+		<li>Trending</li> | 
+		<a href="/about"><li>About</li></a> | <% 
+		if !session[:user_id].nil? && current_user  %>
+				<a href="/profile"><li><%= current_user.handle %></li></a>
+	<%	else %>
+				<a href="/login"><li>Login</li></a>
+	<%	end %>
+
+	</ul>
+</nav>
+</header>
+<div id="head_spacer"></div>
