@@ -1,15 +1,15 @@
 <h1>New Post</h1>
-<%= form_for :post, url: posts_path do |f| %>
+<%= form_for :post, remote: true, url: posts_path do |f| %>
  
   <p><!-- to do: current_user --></p>
   <p>
     <%= f.label :parent %><br>
-    <%= f.select :parent, Post.where(parent_id: nil).map{|p| p.author.handle << " - " << p.body} %>
+    <%= f.select :parent, Post.where(parent_id: nil).map{|p| [p.author.handle << " - " << p.body, p.id] if p.author} %>
   </p>
 
   <p>
-    <%= f.label :handle %><br>
-    <%= text_area_tag :body %>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
   </p>
 
   <p>

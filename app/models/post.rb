@@ -6,6 +6,10 @@ class Post < ActiveRecord::Base
   has_many :sub_posts, class_name: 'Post', foreign_key: 'parent_id'
   belongs_to :parent, class_name: 'Post' #, foreign_key: 'post_id'
 
+  validates :body, presence: true,
+                     length: { maximum: 3, minimum: 1 } 
+  validates :author_id, presence: true
+
   scope :is_popular, -> {
     joins(:favorites).group(:posts).having("COUNT(*) > 3")
   }

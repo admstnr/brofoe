@@ -32,8 +32,13 @@ Rails.application.routes.draw do
   #login handler
   get 'login' => 'users#login_form'
   post 'login' => 'users#login'
+  get 'logout' => 'users#logout'
+  get 'register' => 'users'
+  get 'password' => 'users#password'
+  post 'password' => 'users#password'
 
   get 'profile' => 'users#profile'
+  get 'about' => 'welcome#about'
 
   get 'greatestgood' => 'welcome#greatestgood'
   get 'template' => 'welcome#template'

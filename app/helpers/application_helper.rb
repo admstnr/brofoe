@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+
   def login_form
     concat flash[:alert] unless flash[:alert].nil?
     form_for :user, url: '/login' do |f|
@@ -9,7 +9,7 @@ module ApplicationHelper
       concat f.label :password
       concat f.password_field :password
       concat tag :br
-      concat f.submit
+      concat f.submit "Login"
     end
   end
 

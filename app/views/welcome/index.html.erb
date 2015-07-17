@@ -1,9 +1,4 @@
-<h1>Bro/Foe</h1>
-<p>The 3-character nanoblogging service.</p>
 
-<%= login_form %>
-
-<%= select_date(Time.now) %>
 <br />
 <% def flush_post( post, indent=0 ) %>
 	<span class="indents"><% for i in 0...indent  %><span class="indent"></span><% end %><!--
@@ -25,5 +20,6 @@
 	<hr />
 <% end %>
 
+<%= login_form %>
 	
 	<hr />

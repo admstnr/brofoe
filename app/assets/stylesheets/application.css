@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+body { margin:0; font-size: 16px; font-family:"Kreon";}
+header { text-align:left; width:100%; position:fixed; top:0; height: 2.5em; background-color:rgba(200,50,160,.95); padding:1em 2em; }
+h1,h2,h3,h4,h5,h6 { font-family: "Raleway";}
+header > * { display:inline-block; margin:0;}
+header:after{ height: .2em; background-color:rgba(180,30,130,.8); bottom:0;left:0;right:0;position:absolute;content:"";}
+header nav { position: absolute; width:auto; right:3em; top:.25em; font-size:1.2em;}
+header nav ul { list-style: none; position:relative; right: 1em; }
+header nav ul li { display: inline-block; margin: 0 1em; }
+header a,
+header a:visited { text-decoration:none; color: #000;}
+
+main { margin-right:2em; margin-left:2em;}
+#head_spacer {height:5.5em; }

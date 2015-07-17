@@ -1,7 +1,12 @@
-<h1>Welcome to Users!</h1>
+<h1>We <%= ["boast","have","gots","are blessed with"].sample %> <%= pluralize(@users.length,"User") %>!</h1>
 
 <ul>
 <% @users.each do |user| %>
-	<li><%= link_to( user.handle, user_path(user) ) << " (" << user.first_name << " " << user.last_name << ")" %></li>
+	<li><%= link_to( user.handle, "/users/#{user.id}" ) << " (" << user.first_name << " " << user.last_name << ")" %> <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure, holmes?" } %> | <%= link_to "Delete (Remote)", user_path(user), method: :delete, remote: true, data: { confirm: "Are you sure, holmes?" } %></li>
 <% end %>
 </ul>
+<script>
+$("a[data-method='delete']").on("ajax:complete", function(e){
+  $(e.currentTarget).parents('li').hide()
+});
+</script>
