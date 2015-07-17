@@ -27,3 +27,5 @@ header a:visited { text-decoration:none; color: #000;}
 
 main { margin-right:2em; margin-left:2em;}
 #head_spacer {height:5.5em; }
+
+#loading_icon { position: fixed; width:100px; height:100px; top:45%; left:45%; z-index:2; display:none;}

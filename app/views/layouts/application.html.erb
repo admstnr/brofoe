@@ -22,11 +22,24 @@
   </style>
 </head>
 <body>
+<img id="loading_icon" src="/assets/loading_icon.gif" />
 <%= render partial: "application/header", locals: {current_user: User.find_by(session[:user_id])} %>
 <main>
 <%= yield %>
 </main>
 <script>
+$(document).ready(function(){
+  $(document).on('page:fetch',function(){
+    $('#loading_icon').show();
+    console.log("Loading icon active");
+  });
+  $(document).on('page:receive',function(){
+    $('#loading_icon').hide();
+    console.log("Loading icon removed");
+  });
+});
+
+
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

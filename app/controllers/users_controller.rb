@@ -73,7 +73,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    redirect_to '/users'
+    redirect_to '/users', method: :get
   end
 
   private
