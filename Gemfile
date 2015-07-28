@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+# Paperclip for image uploads
+gem "paperclip", "~> 4.2"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,6 +42,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   # Use sqlite as development database
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
